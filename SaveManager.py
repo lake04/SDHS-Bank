@@ -1,11 +1,16 @@
 import json
+from pathlib import Path
 
 class SaveManager:
 
     def __init__(self):
-        self.filePath = r"C:\Users\wjdgh\SDHS-Bank\Json\account.json"
+         basePath = Path(__file__).parent
+         self.filePath = basePath / "Json" / "account.json"
 
     def Save(self, data):
+
+        self.filePath.parent.mkdir(parents=True, exist_ok=True)
+
         with open(self.filePath, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
