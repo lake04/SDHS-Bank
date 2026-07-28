@@ -3,7 +3,7 @@ import json
 class SaveManager:
 
     def __init__(self):
-        self.filePath = r"C:\Users\wjdgh\OneDrive\Desktop\Sdh\Json\account.json"
+        self.filePath = r"C:\Users\wjdgh\SDHS-Bank\Json\account.json"
 
     def Save(self, data):
         with open(self.filePath, "w", encoding="utf-8") as file:
