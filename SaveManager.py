@@ -1,11 +1,12 @@
 import json
+import os
 from pathlib import Path
 
 class SaveManager:
 
     def __init__(self):
-         basePath = Path(__file__).parent
-         self.filePath = basePath / "Json" / "account.json"
+        base_path = Path(os.getenv("LOCALAPPDATA", Path.home()))
+        self.file_path = base_path / "SDHS-Bank" / "account.json"
 
     def Save(self, data):
 
