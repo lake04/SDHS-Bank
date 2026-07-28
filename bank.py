@@ -95,12 +95,16 @@ def BalanceInquiry():
     print(format(money,',') + "원")
 
 def History():
-    print("거레 내역 조회")
+    print("거래 내역 조회")
     print("----------------------------")
+
+    if not account["history"]:
+        print("거래 내역이 없습니다.")
+
     for history in account["history"]:
-        print(f"[{history["day"]}]")
+        print(f"[{history['day']}]")
         print(history["menu"])
-        print(format(history["amount"],','))
+        print(format(history["amount"], ',') + "원")
         print("----------------------------")
 
 def Exit():
